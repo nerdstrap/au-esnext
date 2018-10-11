@@ -1,0 +1,33 @@
+﻿<template>
+    <ux-grid fluid>
+        <ux-grid-cell>
+            <ux-card>
+                <div class="main">
+                    <span>${remainingTime}</span>
+                    <ux-form validation-renderer="aurelia-ux-form" validation-errors.bind="errors" autocomplete="off">
+                        <template repeat.for="question of _model.userQuestions">
+                            <div class="form-row">
+                                <span>${question.questionText}</span>
+                            </div>
+                            <ux-field>
+                                <label t="user-answer_label">User Answer</label>
+                                <ux-input id="user-answer-input-${$index}" type="${question.showUserAnswer ? 'text' : 'password'}" value.bind="question.userAnswer & validateOnChange" autocomplete="off" autocapitalize="none" autocorrect="off" t="[placeholder]user-answer_placeholder"></ux-input>
+                                <ux-input-info></ux-input-info>
+                            </ux-field>
+                            <div class="form-row">
+                                <ux-checkbox type="checkbox" checked.bind="question.showUserAnswer" id="show-user-answer-input-${$index}"></ux-checkbox>
+                                <label t="show-user-answer_label">show user answer</label>
+                            </div>
+                        </template>
+                        <ux-button type="outline" click.trigger="cancel($event)">
+                            <span t="cancel_button">Cancel</span>
+                        </ux-button>
+                        <ux-button type="raised" click.trigger="authenticate($event)">
+                            <span t="authenticate_button">Authenticate</span>
+                        </ux-button>
+                    </ux-form>
+                </div>
+            </ux-card>
+        </ux-grid-cell>
+    </ux-grid>
+</template>

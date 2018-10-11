@@ -1,0 +1,23 @@
+﻿<template>
+        <ux-dialog>
+            <ux-dialog-header>
+                <h3>
+                    <i t="[class]${_model.headerIcon}"></i>
+                    <span t="${_model.headerText}">${_model.headerText}</span>
+                </h3>
+            </ux-dialog-header>
+            <ux-dialog-body>
+                <ux-grid fluid>
+                    <ux-grid-cell>
+                        <div class="main">
+                            <h3 t="[html]${_model.message}" t-params.bind="_model.messageParams"></h3>
+                        </div>
+                    </ux-grid-cell>
+                </ux-grid>
+            </ux-dialog-body>
+            <ux-dialog-footer>
+                <ux-button type="flat" click.trigger="cancel($event)" t="[label]${_model.cancelButtonText}">${_model.cancelButtonText}</ux-button>
+                <ux-button type="flat" click.trigger="ok($event)" t="[label]${_model.okButtonText}">${_model.okButtonText}</ux-button>
+            </ux-dialog-footer>
+        </ux-dialog>
+    </template>

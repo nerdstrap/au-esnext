@@ -1,0 +1,18 @@
+<template>
+    <require from="styles/app.css"></require>
+    <require from='styles/common.css'></require>
+    <require from='styles/dialog.css'></require>
+    <require from="styles/notification.css"></require>
+
+    <nav-bar router.bind="router" username.bind="username"></nav-bar>
+    <main>
+        <ux-toolbar>
+            <div class="toolbar-row">
+                <span class="title" t="${router.currentInstruction.config.navModel.settings.t}">
+                    ${router.currentInstruction.config.navModel.title}
+                </span>
+            </div>
+        </ux-toolbar>
+        <router-view class="page"></router-view>
+    </main>
+</template>

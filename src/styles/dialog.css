@@ -1,0 +1,106 @@
+ux-dialog-container,
+ux-dialog-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+ux-dialog-overlay {
+    opacity: 0;
+}
+
+ux-dialog-overlay.active {
+    background-color: black;
+    opacity: .5;
+}
+
+ux-dialog-container {
+    display: block;
+    transition: opacity .2s linear;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+ux-dialog-container.active {
+    opacity: 1;
+}
+
+ux-dialog-container>div {
+    padding: 30px;
+}
+
+ux-dialog-container>div>div {
+    display: block;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+ux-dialog-container,
+ux-dialog-container>div,
+ux-dialog-container>div>div {
+    outline: 0;
+}
+
+ux-dialog {
+    display: table;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-color: black;
+    padding: 3;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background: #fff;
+}
+
+ux-dialog>ux-dialog-header {
+    display: block;
+    padding: 16px;
+}
+
+ux-dialog>ux-dialog-header>button {
+    float: right;
+    display: block;
+    cursor: pointer;
+}
+
+ux-dialog>ux-dialog-body {
+    display: block;
+    padding: 16px;
+}
+
+ux-dialog>ux-dialog-footer {
+    display: block;
+    padding: 6px;
+    text-align: right;
+}
+
+ux-dialog>ux-dialog-footer button {
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    margin: 5px 0 5px 5px !important;
+}
+
+.ux-dialog-open {
+    overflow: hidden;
+}

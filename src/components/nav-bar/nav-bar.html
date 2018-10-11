@@ -1,0 +1,17 @@
+<template bindable="router">
+    <ux-drawer type="permanent">
+        <header>
+            <a href="#/login">
+                <img styles.logo t="[src]app_icon">
+            </a>
+            <h1 t="app_title"></h1>
+        </header>
+        <ux-list class="drawer-menu">
+            <template repeat.for="navModel of router.navigation | authFilter: isAuthenticated">
+                <div class="ux-list-item ${navModel.isActive ? 'active' : ''}">
+                    <a class="list-content" href.bind="navModel.href" t.bind="navModel.settings.t">${navModel.title}</a>
+                </div>
+            </template>
+        </ux-list>
+    </ux-drawer>
+</template>
